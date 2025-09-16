@@ -1,0 +1,20 @@
+<h1>Dashboard - <%= role %></h1>
+
+<% if (role === "receptionist") { %>
+  <form action="/add-patient" method="POST">
+    <input name="name" placeholder="Name" />
+    <input name="age" placeholder="Age" />
+    <input name="sex" placeholder="Sex" />
+    <input name="bp" placeholder="BP" />
+    <input name="vitals" placeholder="Vitals" />
+    <button type="submit">Add Patient</button>
+  </form>
+<% } %>
+
+<% if (role === "doctor") { %>
+  <a href="/patients">View Patients</a>
+<% } %>
+
+<% if (role === "admin") { %>
+  <a href="/admin">Admin Controls</a>
+<% } %>
