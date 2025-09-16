@@ -1,0 +1,12 @@
+<h1>Patients</h1>
+<ul>
+  <% patients.forEach(p => { %>
+    <li>
+      <%= p.name %> (Age: <%= p.age %>, BP: <%= p.bp %>)
+      <form action="/prescribe/<%= p.id %>" method="POST">
+        <input name="medicine" placeholder="Type medicine" />
+        <button type="submit">Generate Prescription</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
